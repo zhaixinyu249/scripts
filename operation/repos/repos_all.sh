@@ -1,5 +1,6 @@
 #!/bin/bash
 # 换源脚本
+# bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_all.sh)
 
 out_pink() {
     echo -e "\033[35m$1\033[0m"
@@ -13,7 +14,7 @@ out_yellow() {
     echo -e "\033[33m$1\033[0m"
 }
 
-read -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " repo_type
+read -rp -t 10 "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " repo_type
 repo_type=${repo_type:-1}
 
 # 检测系统名称

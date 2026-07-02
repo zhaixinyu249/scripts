@@ -6,11 +6,25 @@
 
 set -e # 遇错误退出
 
+echo "🔍 正在检测系统信息..."
+
+# 检查是否为 Ubuntu
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" != "centos" ]; then
+        echo "❌ 本脚本仅支持 CentOS 系统！"
+        exit 1
+    fi
+else
+    echo "❌ 无法读取系统信息。"
+    exit 1
+fi
+
 # 获取系统架构
 ARCH=$(uname -m)
 case $ARCH in
-    x86_64) ARCH_REPO="x86_64" ;;
-    aarch64) ARCH_REPO="aarch64" ;;
+    "x86_64") ARCH_REPO="x86_64" ;;
+    "aarch64") ARCH_REPO="aarch64" ;;
     *)
         echo "❌ 不支持的架构: $ARCH"
         exit 1
@@ -28,18 +42,18 @@ replace_centos_repo() {
     extras_url=$3
     updates_url=$4
 
-    repo_file="${REPO_DIR}/${REPO_NAME}"
+    repo_file=${REPO_DIR}/${REPO_NAME}
 
     # 创建备份目录
-    mkdir -p "${BACKUP_DIR}"
+    mkdir -p $BACKUP_DIR
     # 备份
-    mv /etc/yum.repos.d/*.repo "${BACKUP_DIR}"
-    echo "📁 之前的源已备份到 ${BACKUP_DIR}"
+    mv /etc/yum.repos.d/*.repo $BACKUP_DIR
+    echo "📁 之前的源已备份到 $BACKUP_DIR"
 
     # 生成阿里云 repo 内容
-    cat >"${repo_file}" <<EOF
+    cat > $repo_file <EOF
 [base]
-name=CentOS-${version} - Base - mirrors.aliyun.com
+name=CentOS-$version - Base - mirrors.aliyun.com
 baseurl=${baseurl}
 gpgcheck=1
 gpgkey=${baseurl}/RPM-GPG-KEY-CentOS-$version
@@ -50,7 +64,7 @@ priority=1
 name=CentOS-$version - Extras - mirrors.aliyun.com
 baseurl=$extras_url
 gpgcheck=1
-gpgkey=$extras_url/RPM-GPG-KEY-CentOS-$version
+gpgkey=${extras_url}/RPM-GPG-KEY-CentOS-$version
 enabled=1
 priority=1
 
@@ -58,12 +72,12 @@ priority=1
 name=CentOS-$version - Updates - mirrors.aliyun.com
 baseurl=$updates_url
 gpgcheck=1
-gpgkey=$updates_url/RPM-GPG-KEY-CentOS-$version
+gpgkey=${updates_url}/RPM-GPG-KEY-CentOS-$version
 enabled=1
 priority=1
 EOF
 
-    echo "✅ $repo_name 已更新为阿里云镜像"
+    echo "✅ $REPO_NAME 已更新为阿里云镜像"
 }
 
 . /etc/os-release
