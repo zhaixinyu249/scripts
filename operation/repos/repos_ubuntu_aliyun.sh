@@ -67,7 +67,7 @@ fi
 echo "🔄 正在替换主源为阿里云..."
 case $VERSION_ID in
     24.04)
-        case $ARCH_TYPE in
+        case $ARCH_REPO in
             x86_64)
                 URIs="https://mirrors.aliyun.com/ubuntu"
                 ;;
@@ -90,7 +90,7 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 EOF
         ;;
     26.04)
-        case $ARCH_TYPE in
+        case $ARCH_REPO in
             x86_64)
                 URIs="https://mirrors.aliyun.com/ubuntu"
                 ;;
