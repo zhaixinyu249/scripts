@@ -33,7 +33,7 @@ centos)
     echo "===== centos ====="
     case ${repo_type} in
         1)
-            bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/shell/network/repos_centos_aliyun.sh)
+            bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_centos_aliyun.sh)
             ;;
         2)
             echo "${system_name} ${repo_type} 待完善"
