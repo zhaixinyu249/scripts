@@ -84,21 +84,21 @@ EOF
 # 根据版本执行替换
 if [[ "$VERSION_ID" == "7" ]]; then
     echo "✅ 检测到 CentOS 7 ($ARCH_REPO)"
-    replace_centos_repo "7" "CentOS-Base.repo" \
+    replace_centos_repo "7" \
         "http://mirrors.aliyun.com/centos/7/os/$ARCH_REPO/" \
         "http://mirrors.aliyun.com/centos/7/extras/$ARCH_REPO/" \
         "http://mirrors.aliyun.com/centos/7/updates/$ARCH_REPO/"
 
 elif [[ "$VERSION_ID" == "8" ]] || [[ "$PLATFORM_ID" == "platform:el8" ]]; then
     echo "✅ 检测到 CentOS 8 或 Stream 8 ($ARCH_REPO)"
-    replace_centos_repo "8" "CentOS-Base.repo" \
+    replace_centos_repo "8" \
         "http://mirrors.aliyun.com/centos/8-stream/BaseOS/$ARCH_REPO/os/" \
         "http://mirrors.aliyun.com/centos/8-stream/extras/$ARCH_REPO/os/" \
         "http://mirrors.aliyun.com/centos/8-stream/AppStream/$ARCH_REPO/os/"
 
 elif [[ "$VERSION_ID" == "9" ]] || [[ "$PLATFORM_ID" == "platform:el9" ]]; then
     echo "✅ 检测到 CentOS Stream 9 ($ARCH_REPO)"
-    replace_centos_repo "9" "CentOS-Base.repo" \
+    replace_centos_repo "9" \
         "http://mirrors.aliyun.com/centos/9-stream/BaseOS/$ARCH_REPO/os/" \
         "http://mirrors.aliyun.com/centos/9-stream/extras/$ARCH_REPO/os/" \
         "http://mirrors.aliyun.com/centos/9-stream/AppStream/$ARCH_REPO/os/"
