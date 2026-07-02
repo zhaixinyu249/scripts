@@ -135,7 +135,7 @@ https://mirrors.aliyun.com/docker-ce/linux/ubuntu "$VERSION_CODENAME" stable" | 
 sudo tee /etc/apt/sources.list.d/docker.list
 
 # 提示用户导入 GPG 密钥（如果尚未添加）
-GPG_KEY_PATH="/etc/apt/keyrings/docker.asc"
+GPG_KEY_PATH="/etc/apt/keyrings/docker.gpg"
 if [ ! -f "$GPG_KEY_PATH" ]; then
     # Docker官方公钥
     echo "🔐 正在下载并安装 Docker 官方 GPG 密钥（阿里云同步源）..."
