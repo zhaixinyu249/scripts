@@ -16,6 +16,7 @@ out_yellow() {
 
 read -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " -t 5 repo_type
 repo_type=${repo_type:-1}
+echo ""
 
 # 检测系统名称
 if grep -qi "sources" /home/.repos_updated 2>/dev/null; then
