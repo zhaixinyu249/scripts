@@ -14,9 +14,10 @@ out_yellow() {
     echo -e "\033[33m$1\033[0m"
 }
 
-read -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " -t 5 repo_type
-repo_type=${repo_type:-1}
-echo ""
+read -n 1 -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " -t 3 repo_type
+# 当用户不输入内容时，输出一个空行
+if [ $? -ne 0 ];then echo ""; fi
+repo_type=${repo_type:-1};echo $repo_type
 
 # 检测系统名称
 if grep -qi "sources" /home/.repos_updated 2>/dev/null; then
