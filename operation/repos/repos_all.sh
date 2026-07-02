@@ -14,7 +14,7 @@ out_yellow() {
     echo -e "\033[33m$1\033[0m"
 }
 
-read -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " -t 10 repo_type
+read -rp "选择源（1：阿里，2：腾讯，3：华为，4：清华）:（默认阿里） " -t 5 repo_type
 repo_type=${repo_type:-1}
 
 # 检测系统名称
