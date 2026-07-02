@@ -75,7 +75,7 @@ case $VERSION_ID in
                 URIs="https://mirrors.aliyun.com/ubuntu-ports"
                 ;;
         esac
-        cat > /etc/apt/sources.list.d/ubuntu.sources < EOF
+        cat > /etc/apt/sources.list.d/ubuntu.sources << EOF
 Types: deb
 URIs: $URIs
 Suites: noble noble-updates noble-backports
@@ -98,7 +98,7 @@ EOF
                 URIs="https://mirrors.aliyun.com/ubuntu-ports"
                 ;;
         esac
-        cat > /etc/apt/sources.list.d/ubuntu.sources < EOF
+        cat > /etc/apt/sources.list.d/ubuntu.sources << EOF
 Types: deb
 URIs: $URIs
 Suites: resolute resolute-updates resolute-backports

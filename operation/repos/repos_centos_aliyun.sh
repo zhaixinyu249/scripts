@@ -51,7 +51,7 @@ replace_centos_repo() {
     echo "📁 之前的源已备份到 $BACKUP_DIR"
 
     # 生成阿里云 repo 内容
-    cat > $repo_file <EOF
+    cat > $repo_file <<EOF
 [base]
 name=CentOS-$version - Base - mirrors.aliyun.com
 baseurl=${baseurl}
