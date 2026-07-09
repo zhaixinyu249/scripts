@@ -1,5 +1,5 @@
 # scripts
-sava some scripts
+save some scripts
 
 # 系统相关
 xinjiqi.sh —— 禁用密码远程连接，使用公钥登录
