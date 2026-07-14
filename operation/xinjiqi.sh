@@ -1,5 +1,8 @@
 #!/bin/bash
 # 添加密钥，禁用密码登录
+# 使用方法：
+# 1）bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/hosts.sh)
+# 2）bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/operation/xinjiqi.sh)
 
 info_echo() {
     # 流程信息
