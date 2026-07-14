@@ -3,8 +3,10 @@
 # | Ubuntu 系统源 & Docker 源 一键替换为阿里云           |
 # | 支持自动识别版本，安全备份，适用于 18.04+              |
 # +--------------------------------------------------+
-# bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/shell/network/repos_ubuntu_aliyun.sh)
 # shellcheck disable=SC1091
+# 使用方法：
+# 1）bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_ubuntu_aliyun.sh)
+# 2）bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/operation/repos/repos_ubuntu_aliyun.sh)
 set -e  # 出错立即退出
 
 echo "🔍 正在检测系统信息..."
