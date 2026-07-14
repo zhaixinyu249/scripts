@@ -1,6 +1,8 @@
 #!/bin/bash
 # 换源脚本
-# bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_all.sh)
+# 使用方法：
+# 1）bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_all.sh)
+# 2）bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/operation/repos/repos_all.sh)
 
 out_pink() {
     echo -e "\033[35m$1\033[0m"
