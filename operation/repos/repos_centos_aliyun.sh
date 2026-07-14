@@ -3,6 +3,9 @@
 # | CentOS 换源为阿里云镜像 一键脚本                     |
 # | 支持 CentOS 7, 8, Stream 8, Stream 9              |
 # +--------------------------------------------------+
+# 使用方法：
+# 1）bash <(curl -sSfLk https://github.com/zhaixinyu249/scripts/raw/refs/heads/main/operation/repos/repos_centos_aliyun.sh)
+# 2）bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/operation/repos/repos_centos_aliyun.sh)
 
 set -e # 遇错误退出
 
