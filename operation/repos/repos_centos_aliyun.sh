@@ -130,7 +130,8 @@ echo "📂 备份路径: $BACKUP_DIR"
 
 {
     # 1. 下载 EPEL-7 的 GPG 公钥
-    curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+    # curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+    curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7 http://mirrors.aliyun.com/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-7
     # 2. 导入该密钥到 RPM 数据库
     rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
     # 3. 清理缓存并重新尝试安装
