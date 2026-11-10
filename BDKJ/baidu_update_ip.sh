@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+# set -x
 
 GREEN() {
     echo -e "\033[32m$1\033[0m"
