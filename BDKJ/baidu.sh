@@ -1,17 +1,18 @@
 #!/bin/bash
 
-Pop_conf() {
-    cat /data/kuaicdn/bbiz/pop/args.conf
+Cat_conf() {
+    cat /data/kuaicdn/bbiz/$1/args.conf
 }
 
 main() {
     case $1 in
-        # 查看配置文件
-        "popconf")
-            Pop_conf
+        # 查看pop配置文件
+        "catconf")
+            Cat_conf "$@"
             ;;
-        # pop更换ip
-        "pop_update_ip")
+        # 更换ip
+        "update_ip")
+            bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/BDKJ/baidu_update_ip.sh) "$@"
             ;;
     esac
 }
