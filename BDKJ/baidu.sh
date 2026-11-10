@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 Cat_conf() {
     case $1 in
