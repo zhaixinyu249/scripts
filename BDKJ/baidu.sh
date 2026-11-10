@@ -1,14 +1,22 @@
 #!/bin/bash
 
 Cat_conf() {
-    cat /data/kuaicdn/bbiz/$1/args.conf
+    case $1 in
+        "pop")
+            file="/data/kuaicdn/bbiz/pop/args.conf"
+            ;;
+        "ant")
+            file="/data/kuaicdn/bbiz/ant/config.conf"
+            ;;
+    esac
+    cat $file
 }
 
 main() {
     case $1 in
-        # 查看pop配置文件
+        # 查看配置文件
         "catconf")
-            Cat_conf "$@"
+            Cat_conf $1
             ;;
         # 更换ip
         "update_ip")
