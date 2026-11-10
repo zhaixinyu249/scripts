@@ -17,7 +17,7 @@ main() {
     case $1 in
         # 查看配置文件
         "catconf")
-            Cat_conf $1
+            Cat_conf $2
             ;;
         # 更换ip
         "update_ip")
