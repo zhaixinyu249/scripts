@@ -1,33 +1,21 @@
 #!/bin/bash
 
-GREEN() {
-    echo -e "\033[32m$1\033[0m"
-}
-RED() {
-    echo -e "\033[31m$1\033[0m"
-}
-YELLOW() {
-    echo -e "\033[33m$1\033[0m"
-}
-
 # 初始化;需要配置ipv6
 Init() {
-    # curl -6 ip.sb &> /dev/null
-    # if [ $? != 0 ]; then
-    # RED "未检测到IPV6，请先配置IPV6"
-    # exit 1
-    # fi
-    # systemctl restart docker
-    # # 安装zbx监控
-    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 63
-    # # 阵列磁盘挂载
-    # # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 35
-    # # 开启性能模式
-    # tuned-adm profile latency-performance
-    # # 输出内容填写到语雀表格
-    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 64
-    # systemctl enable NetworkManager
-    echo "This is test!!!"
+    if curl -6 -s --connect-timeout 3 --max-time 5 ip.sb &> /dev/null; then
+        echo -e "\033[31m未检测到IPV6，请先配置IPV6\033[0m"
+        exit 1
+    fi
+    systemctl restart docker
+    # 安装zbx监控
+    bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 63
+    # 阵列磁盘挂载
+    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 35
+    # 开启性能模式
+    tuned-adm profile latency-performance
+    # 输出内容填写到语雀表格
+    bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 64
+    systemctl enable NetworkManager
 }
 
 #剔除机械磁盘
