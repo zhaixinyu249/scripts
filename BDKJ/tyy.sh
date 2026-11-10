@@ -12,21 +12,22 @@ YELLOW() {
 
 # 初始化;需要配置ipv6
 Init() {
-    curl -6 ip.sb &> /dev/null
-    if [ $? != 0 ]; then
-    RED "未检测到IPV6，请先配置IPV6"
-    exit 1
-    fi
-    systemctl restart docker
-    # 安装zbx监控
-    bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 63
-    # 阵列磁盘挂载
-    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 35
-    # 开启性能模式
-    tuned-adm profile latency-performance
-    # 输出内容填写到语雀表格
-    bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 64
-    systemctl enable NetworkManager
+    # curl -6 ip.sb &> /dev/null
+    # if [ $? != 0 ]; then
+    # RED "未检测到IPV6，请先配置IPV6"
+    # exit 1
+    # fi
+    # systemctl restart docker
+    # # 安装zbx监控
+    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 63
+    # # 阵列磁盘挂载
+    # # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 35
+    # # 开启性能模式
+    # tuned-adm profile latency-performance
+    # # 输出内容填写到语雀表格
+    # bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 64
+    # systemctl enable NetworkManager
+    echo "This is test!!!"
 }
 
 #剔除机械磁盘
