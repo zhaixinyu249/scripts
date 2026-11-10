@@ -64,7 +64,7 @@ TYY_info() {
 }
 
 # 开机自动放行22端口
-pass22() {
+Pass22() {
     iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT
     systemctl enable rc-local
     systemctl start rc-local
@@ -72,7 +72,7 @@ pass22() {
 }
 
 # 删除业务
-delete_tyy() {
+Delete_tyy() {
     #清理防火墙规则
     iptables -F
     iptables -L -n -v
@@ -110,10 +110,10 @@ main() {
             ;;
         # 放行22端口
         "pass22")
-            pass22
+            Pass22
             ;;
         "delete_tyy")
-            delete_tyy
+        Delete_tyy
             ;;
     esac
 }
