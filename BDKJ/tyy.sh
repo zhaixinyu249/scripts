@@ -108,4 +108,4 @@ main() {
     esac
 }
 
-main "#@"
+main "$@"
