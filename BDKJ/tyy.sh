@@ -73,21 +73,21 @@ pass22() {
 
 # 删除业务
 delete_tyy() {
-  #清理防火墙规则
-  iptables -F
-  iptables -L -n -v
-  # 删除容器
-  docker rm -f pouch
-  # 删除SN
-  rm -f /data/sn_file
-  # 删除zram0
-  swapoff /dev/zram0
-  bash -c 'echo 1 > /sys/block/zram0/reset'
-  # 重载内核模块
-  modprobe -r zram
-  modprobe zram
-  # 格盘
-  bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 44 y
+    #清理防火墙规则
+    iptables -F
+    iptables -L -n -v
+    # 删除容器
+    docker rm -f pouch
+    # 删除SN
+    rm -f /data/sn_file
+    # 删除zram0
+    swapoff /dev/zram0
+    bash -c 'echo 1 > /sys/block/zram0/reset'
+    # 重载内核模块
+    modprobe -r zram
+    modprobe zram
+    # 格盘
+    bash <(curl -sSfLk https://3411.s.kuaicdn.cn:34112/ruko.sh) 44 y
 }
 
 main() {
