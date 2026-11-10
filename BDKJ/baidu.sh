@@ -47,7 +47,7 @@ main() {
             bash <(curl -sSfLk https://gitee.com/zhaixinyu249/scripts/raw/main/BDKJ/baidu_update_ip.sh) "${@:2}"
             ;;
         # 删除非pop缓存
-        delele_nopop_cache)
+        "delele_nopop_cache")
             Delele_nopop_cache
             ;;
     esac
