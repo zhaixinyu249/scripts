@@ -113,7 +113,7 @@ main() {
             Pass22
             ;;
         "delete_tyy")
-        Delete_tyy
+            Delete_tyy
             ;;
     esac
 }
