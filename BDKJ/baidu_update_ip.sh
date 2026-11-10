@@ -102,7 +102,7 @@ _POP(){
 
 _main() {
     # 检查是否提供了足够的参数
-    if [ $# -ge 5 ]; then
+    if [ "$#" -lt 5 ]; then
         echo "用法: bash <(curl XXXXX)  ant/pop  vlan   IPv4/掩码   v4网关    速率   [IPv6/掩码  IPv6网关](pop可选)"
         exit 1
     fi
