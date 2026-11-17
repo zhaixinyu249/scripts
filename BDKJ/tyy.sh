@@ -2,7 +2,7 @@
 
 # 初始化;需要配置ipv6
 Init() {
-    if curl -6 -s --connect-timeout 3 --max-time 5 ip.sb &> /dev/null; then
+    if ! curl -6 -s --connect-timeout 3 --max-time 5 ip.sb &> /dev/null; then
         echo -e "\033[31m未检测到IPV6，请先配置IPV6\033[0m"
         exit 1
     fi
